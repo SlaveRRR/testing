@@ -1,0 +1,12 @@
+{
+  "name": "testing",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev":"node index.js"
+  },
+  "dependencies": {
+    "selenium-webdriver": "^4.19.0"
+  }
+}
