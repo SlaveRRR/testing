@@ -26,6 +26,19 @@ class MospolytechPage extends BasePage{
         await this.click(By.xpath(generateSelectXpath(num)))
         await driver.sleep(5000)
     }
+    async checkIfCurrentDayColored() {
+        let days = await driver.findElements(
+          By.xpath(`//div[@class="schedule-week"]/child::div`)
+        );
+        let thisDay;
+        for (let i = 0; i < days.length; i++) {
+          if (days.indexOf(days[i]) == new Date().getDay() - 1) {
+            thisDay = days[i];
+          }
+        }
+        const result = await thisDay.getAttribute("class")
+        return result === "schedule-day schedule-day_today"
+      }
 }
 
 module.exports = MospolytechPage
