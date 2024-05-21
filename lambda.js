@@ -4,11 +4,7 @@ let driver = new Builder().forBrowser(Browser.CHROME).build();
 let total = 5;
 let remaining = 5;
 lambdatest();
-const expectedText = (remaining,total) => `${remaining} of ${total} remaining`;
-const getNewText = async (elem) => {
-    const text = await elem.getText();
-    return text
-}
+
 async function lambdatest() {
   try {
     await driver.get("https://lambdatest.github.io/sample-todo-app/ ");
